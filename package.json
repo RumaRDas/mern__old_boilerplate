@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/RumaRDas/mern_boilerplate/issues"
   },
-  "homepage": "https://github.com/RumaRDas/mern_boilerplate#readme"
+  "homepage": "https://github.com/RumaRDas/mern_boilerplate#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
