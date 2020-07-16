@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3001;
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -14,9 +14,12 @@ if (process.env.NODE_ENV === "production"){
     app.use(express.static("client/build"));
 }
 
+// Connect to the Mongo DB
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/merndata");
+
 app.get('/', (req, res) => {
     res.send("HelloWorld yess....");
 
 })
-
+// Start the API server
 app.listen(PORT, () => console.log(`server is started at: ${PORT}`));
